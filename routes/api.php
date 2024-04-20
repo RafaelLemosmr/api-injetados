@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user-profiles', [AuthController::class, 'getProfiles']);
-    
+
+    Route::get('get-customers', [CustomerController::class, 'getAllCustomers']);
+    Route::get('get-customers-by-id/{id}', [CustomerController::class, 'getCustomerById']);
+    Route::post('create-customer', [CustomerController::class, 'createCustomer']);
+    Route::patch('update-customer/{id}', [CustomerController::class, 'updateCustomer']);
 });
 Route::post('create-user', [AuthController::class, 'createUser']);
 Route::post('login', [AuthController::class, 'auth']);
