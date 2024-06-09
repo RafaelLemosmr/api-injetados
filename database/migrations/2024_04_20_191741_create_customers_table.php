@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('document');
             $table->string('type_document');
             $table->string('status');
-            $table->string('code_erp')->nullable();
             $table->timestamps();
         });
     }

@@ -6,7 +6,6 @@ use App\Exceptions\AuthFailedException;
 use App\Models\User;
 use App\Utils\Util;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class AuthRepository
 {
